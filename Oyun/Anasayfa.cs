@@ -20,84 +20,25 @@ namespace Oyun
             this.TopMost = true;
             this.Bounds=Screen.PrimaryScreen.Bounds;
 
-            button1.Top = (playground.Height/ button1.Height)* 20;
-            button1.Left = (playground.Width / button1.Width) * 90;
-            button2.Top = (playground.Height / button2.Height) * 30;
-            button2.Left = (playground.Width / button2.Width) * 90;
-            button3.Top = (playground.Height / button3.Height) * 40;
-            button3.Left = (playground.Width / button3.Width) * 90;
-            button4.Top = (playground.Height / button4.Height) * 20;
-            button4.Left = (playground.Width / button4.Width) * 50;
-            button5.Top = (playground.Height / button5.Height) * 30;
-            button5.Left = (playground.Width / button5.Width) * 50;
-            button6.Top = (playground.Height / button6.Height) * 40;
-            button6.Left = (playground.Width / button6.Width) * 50;
-            wocolorchange_lbl.Left = (playground.Width / wocolorchange_lbl.Width) * 117;
-            wocolorchange_lbl.Top = (playground.Height / wocolorchange_lbl.Height) * 5;
-            colorchange_lbl.Left = (playground.Width / colorchange_lbl.Width) * 59;
-            colorchange_lbl.Top = (playground.Height / colorchange_lbl.Height) * 5;
+            EasyNoColorButton.Top = (playground.Height/ EasyNoColorButton.Height)* 20;
+            EasyNoColorButton.Left = (playground.Width / EasyNoColorButton.Width) * 90;
+            MedNoColorButton.Top = (playground.Height / MedNoColorButton.Height) * 30;
+            MedNoColorButton.Left = (playground.Width / MedNoColorButton.Width) * 90;
+            HardNoColorButton.Top = (playground.Height / HardNoColorButton.Height) * 40;
+            HardNoColorButton.Left = (playground.Width / HardNoColorButton.Width) * 90;
+            EasyButton.Top = (playground.Height / EasyButton.Height) * 20;
+            EasyButton.Left = (playground.Width / EasyButton.Width) * 50;
+            MedButton.Top = (playground.Height / MedButton.Height) * 30;
+            MedButton.Left = (playground.Width / MedButton.Width) * 50;
+            HardButton.Top = (playground.Height / HardButton.Height) * 40;
+            HardButton.Left = (playground.Width / HardButton.Width) * 50;
+            WoColorChange_lbl.Left = (playground.Width / WoColorChange_lbl.Width) * 117;
+            WoColorChange_lbl.Top = (playground.Height / WoColorChange_lbl.Height) * 5;
+            ColorChange_lbl.Left = (playground.Width / ColorChange_lbl.Width) * 59;
+            ColorChange_lbl.Top = (playground.Height / ColorChange_lbl.Height) * 5;
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            gameForm EasyGameForm2 = new gameForm();
-            EasyGameForm2.difficulties='e';
-            EasyGameForm2.color = true;
-            EasyGameForm2.ShowDialog();
-            this.Close();
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            gameForm MediumGameForm= new gameForm();
-            MediumGameForm.difficulties = 'm';
-            MediumGameForm.color = true;
-            MediumGameForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            gameForm HardGameForm=new gameForm();
-            HardGameForm.difficulties = 'h';
-            HardGameForm.color = true;
-            HardGameForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            gameForm EasyGameNoColorForm=new gameForm();
-            EasyGameNoColorForm.difficulties = 'e';
-            EasyGameNoColorForm.color = false;
-            EasyGameNoColorForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            gameForm MedGameNoColorForm= new gameForm();
-            MedGameNoColorForm.difficulties = 'm';
-            MedGameNoColorForm.color = false;
-            MedGameNoColorForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            gameForm HardGameNoColorForm = new gameForm();
-            HardGameNoColorForm.difficulties = 'h';
-            HardGameNoColorForm.color = false;
-            HardGameNoColorForm.ShowDialog();
-            this.Close();
-        }
 
         private void Anasayfa_KeyDown(object sender, KeyEventArgs e)
         {
@@ -106,5 +47,60 @@ namespace Oyun
                 this.Close();
             }
         }
+
+        private void EasyNoColorButton_Click(object sender, EventArgs e)
+        {
+            GameForm EasyGameNoColorForm = new GameForm();
+            EasyGameNoColorForm.difficulties = 'e';
+            EasyGameNoColorForm.color = false;
+            EasyGameNoColorForm.ShowDialog();
+            this.Close();
+        }
+
+        private void MedNoColorButton_Click(object sender, EventArgs e)
+        {
+            GameForm MedGameNoColorForm = new GameForm();
+            MedGameNoColorForm.difficulties = 'm';
+            MedGameNoColorForm.color = false;
+            MedGameNoColorForm.ShowDialog();
+            this.Close();
+        }
+
+        private void HardNoColorButton_Click(object sender, EventArgs e)
+        {
+            GameForm HardGameNoColorForm = new GameForm();
+            HardGameNoColorForm.difficulties = 'h';
+            HardGameNoColorForm.color = false;
+            HardGameNoColorForm.ShowDialog();
+            this.Close();
+        }
+
+        private void EasyButton_Click(object sender, EventArgs e)
+        {
+            GameForm EasyGameForm2 = new GameForm();
+            EasyGameForm2.difficulties = 'e';
+            EasyGameForm2.color = true;
+            EasyGameForm2.ShowDialog();
+            this.Close();
+        }
+
+        private void MedButton_Click(object sender, EventArgs e)
+        {
+            GameForm MediumGameForm = new GameForm();
+            MediumGameForm.difficulties = 'm';
+            MediumGameForm.color = true;
+            MediumGameForm.ShowDialog();
+            this.Close();
+        }
+
+        private void HardButton_Click(object sender, EventArgs e)
+        {
+            GameForm HardGameForm = new GameForm();
+            HardGameForm.difficulties = 'h';
+            HardGameForm.color = true;
+            HardGameForm.ShowDialog();
+            this.Close();
+        }
+
     }
 }

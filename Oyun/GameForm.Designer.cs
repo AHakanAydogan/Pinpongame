@@ -1,6 +1,6 @@
 ﻿namespace Oyun
 {
-    partial class gameForm
+    partial class GameForm
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -29,38 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.playGround = new System.Windows.Forms.Panel();
+            this.PlayGround = new System.Windows.Forms.Panel();
             this.gameover_lbl = new System.Windows.Forms.Label();
             this.hghpoints_lbl = new System.Windows.Forms.Label();
             this.points_lbl = new System.Windows.Forms.Label();
             this.hghscore_lbl = new System.Windows.Forms.Label();
             this.score_lbl = new System.Windows.Forms.Label();
             this.ball = new System.Windows.Forms.PictureBox();
-            this.racket = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TopRacket = new System.Windows.Forms.PictureBox();
-            this.playGround.SuspendLayout();
+            this.Racket = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PlayGround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopRacket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
             this.SuspendLayout();
             // 
-            // playGround
+            // PlayGround
             // 
-            this.playGround.Controls.Add(this.gameover_lbl);
-            this.playGround.Controls.Add(this.hghpoints_lbl);
-            this.playGround.Controls.Add(this.points_lbl);
-            this.playGround.Controls.Add(this.hghscore_lbl);
-            this.playGround.Controls.Add(this.score_lbl);
-            this.playGround.Controls.Add(this.ball);
-            this.playGround.Controls.Add(this.TopRacket);
-            this.playGround.Controls.Add(this.racket);
-            this.playGround.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.playGround.Location = new System.Drawing.Point(0, 0);
-            this.playGround.Name = "playGround";
-            this.playGround.Size = new System.Drawing.Size(800, 450);
-            this.playGround.TabIndex = 0;
-            this.playGround.Paint += new System.Windows.Forms.PaintEventHandler(this.playground_Paint);
+            this.PlayGround.Controls.Add(this.gameover_lbl);
+            this.PlayGround.Controls.Add(this.hghpoints_lbl);
+            this.PlayGround.Controls.Add(this.points_lbl);
+            this.PlayGround.Controls.Add(this.hghscore_lbl);
+            this.PlayGround.Controls.Add(this.score_lbl);
+            this.PlayGround.Controls.Add(this.ball);
+            this.PlayGround.Controls.Add(this.TopRacket);
+            this.PlayGround.Controls.Add(this.Racket);
+            this.PlayGround.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayGround.Location = new System.Drawing.Point(0, 0);
+            this.PlayGround.Name = "PlayGround";
+            this.PlayGround.Size = new System.Drawing.Size(800, 450);
+            this.PlayGround.TabIndex = 0;
             // 
             // gameover_lbl
             // 
@@ -70,7 +69,6 @@
             this.gameover_lbl.Size = new System.Drawing.Size(373, 329);
             this.gameover_lbl.TabIndex = 4;
             this.gameover_lbl.Text = "Game Over!\r\n\r\nF1 - Restart Game\r\n\r\nF2 - Main Menu\r\n\r\nESC - Exit Game\r\n";
-            this.gameover_lbl.Click += new System.EventHandler(this.gameover_lbl_Click);
             // 
             // hghpoints_lbl
             // 
@@ -82,7 +80,6 @@
             this.hghpoints_lbl.TabIndex = 3;
             this.hghpoints_lbl.Text = "0";
             this.hghpoints_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.hghpoints_lbl.Click += new System.EventHandler(this.label2_Click);
             // 
             // points_lbl
             // 
@@ -94,7 +91,6 @@
             this.points_lbl.TabIndex = 3;
             this.points_lbl.Text = "0";
             this.points_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.points_lbl.Click += new System.EventHandler(this.label2_Click);
             // 
             // hghscore_lbl
             // 
@@ -105,7 +101,6 @@
             this.hghscore_lbl.Size = new System.Drawing.Size(247, 51);
             this.hghscore_lbl.TabIndex = 2;
             this.hghscore_lbl.Text = "High Score:";
-            this.hghscore_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // score_lbl
             // 
@@ -116,7 +111,6 @@
             this.score_lbl.Size = new System.Drawing.Size(147, 51);
             this.score_lbl.TabIndex = 2;
             this.score_lbl.Text = "Score:";
-            this.score_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // ball
             // 
@@ -127,20 +121,6 @@
             this.ball.TabIndex = 1;
             this.ball.TabStop = false;
             // 
-            // racket
-            // 
-            this.racket.BackColor = System.Drawing.Color.Black;
-            this.racket.Location = new System.Drawing.Point(290, 361);
-            this.racket.Name = "racket";
-            this.racket.Size = new System.Drawing.Size(300, 20);
-            this.racket.TabIndex = 0;
-            this.racket.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // TopRacket
             // 
             this.TopRacket.BackColor = System.Drawing.Color.Black;
@@ -150,32 +130,45 @@
             this.TopRacket.TabIndex = 0;
             this.TopRacket.TabStop = false;
             // 
-            // gameForm
+            // Racket
+            // 
+            this.Racket.BackColor = System.Drawing.Color.Black;
+            this.Racket.Location = new System.Drawing.Point(290, 361);
+            this.Racket.Name = "Racket";
+            this.Racket.Size = new System.Drawing.Size(300, 20);
+            this.Racket.TabIndex = 0;
+            this.Racket.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.playGround);
-            this.Name = "gameForm";
+            this.Controls.Add(this.PlayGround);
+            this.Name = "GameForm";
             this.Text = "Ping Pong Game";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameForm_KeyDown);
-            this.playGround.ResumeLayout(false);
-            this.playGround.PerformLayout();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameForm_KeyDown);
+            this.PlayGround.ResumeLayout(false);
+            this.PlayGround.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.racket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopRacket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Racket)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel playGround;
+        private System.Windows.Forms.Panel PlayGround;
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
         private System.Windows.Forms.PictureBox ball;
-        private System.Windows.Forms.PictureBox racket;
+        private System.Windows.Forms.PictureBox Racket;
         private System.Windows.Forms.Label gameover_lbl;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label hghpoints_lbl;

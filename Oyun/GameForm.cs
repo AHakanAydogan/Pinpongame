@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Oyun
 {
-    public partial class gameForm : Form
+    public partial class GameForm : Form
     {
         public int speed_left=1;
         public int speed_top=1;
@@ -21,7 +21,7 @@ namespace Oyun
 
 
 
-        public gameForm()
+        public GameForm()
         {
             
             InitializeComponent();
@@ -32,12 +32,12 @@ namespace Oyun
             this.TopMost = true;
             this.Bounds=Screen.PrimaryScreen.Bounds;
 
-            racket.Top = playGround.Bottom-(playGround.Bottom/15);
-            racket.Left = playGround.Width/2-(racket.Width/2);
-            TopRacket.Left=playGround.Width/2-(TopRacket.Width/2);
-            TopRacket.Top = playGround.Top + (TopRacket.Height*2);
-            gameover_lbl.Left=playGround.Width/2-(gameover_lbl.Width/2);
-            gameover_lbl.Top=playGround.Height/2-(gameover_lbl.Height/2);
+            Racket.Top = PlayGround.Bottom-(PlayGround.Bottom/15);
+            Racket.Left = PlayGround.Width/2-(Racket.Width/2);
+            TopRacket.Left=PlayGround.Width/2-(TopRacket.Width/2);
+            TopRacket.Top = PlayGround.Top + (TopRacket.Height*2);
+            gameover_lbl.Left=PlayGround.Width/2-(gameover_lbl.Width/2);
+            gameover_lbl.Top=PlayGround.Height/2-(gameover_lbl.Height/2);
             gameover_lbl.Visible = false;
             hghpoints_lbl.Visible = false;
             hghscore_lbl.Visible=false;
@@ -46,25 +46,6 @@ namespace Oyun
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gameover_lbl_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -87,20 +68,20 @@ namespace Oyun
                 difficulties = 'z';
             }
 
-            racket.Left=Cursor.Position.X-(racket.Width/2);
+            Racket.Left=Cursor.Position.X-(Racket.Width/2);
             ball.Left += speed_left;
             ball.Top += speed_top;
 
 
-            if (ball.Left <= playGround.Left)
+            if (ball.Left <= PlayGround.Left)
             {
                 speed_left = -speed_left;
             }
-            if (ball.Right >= playGround.Right)
+            if (ball.Right >= PlayGround.Right)
             {
                 speed_left = -speed_left;
             }
-            if (ball.Top<= playGround.Top)
+            if (ball.Top<= PlayGround.Top)
             {
                 gameover_lbl.Visible = true;
                 if (points > highscore)
@@ -112,7 +93,7 @@ namespace Oyun
                 hghscore_lbl.Visible = true;
                 timer1.Enabled = false;
             }
-            if (ball.Bottom>= playGround.Bottom)
+            if (ball.Bottom>= PlayGround.Bottom)
             {
                 gameover_lbl.Visible = true;
                 if (points > highscore)
@@ -125,7 +106,7 @@ namespace Oyun
                 timer1.Enabled = false;
 
             }
-            if ((ball.Bottom+ ball.Height / 2)  >= racket.Top && (ball.Bottom+ball.Height / 2)  <= racket.Bottom && ball.Left>=racket.Left && ball.Right <= racket.Right) 
+            if ((ball.Bottom+ ball.Height / 2)  >= Racket.Top && (ball.Bottom+ball.Height / 2)  <= Racket.Bottom && ball.Left>=Racket.Left && ball.Right <= Racket.Right) 
             {
                 switch(difficulties)
                 { 
@@ -152,7 +133,7 @@ namespace Oyun
                 if (color)
                 {
                     Random r = new Random();
-                    playGround.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
+                    PlayGround.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
                 }
 
 
@@ -184,12 +165,12 @@ namespace Oyun
                 if (color)
                 {
                     Random r = new Random();
-                    playGround.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
+                    PlayGround.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
                 }
             }
         }
 
-        private void gameForm_KeyDown(object sender, KeyEventArgs e)
+        private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.D)
             {
@@ -199,14 +180,14 @@ namespace Oyun
             {
                 TopRacket.Left -= 100;
             }
-            if (e.KeyCode == Keys.Escape) 
+            if (e.KeyCode == Keys.Escape)
             {
-            this.Close();
+                this.Close();
             }
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
                 Random r = new Random();
-                ball.Top = r.Next(300,600);
+                ball.Top = r.Next(300, 600);
                 ball.Left = r.Next(900, 1000);
                 switch (difficulties)
                 {
@@ -224,27 +205,22 @@ namespace Oyun
                         break;
 
                 }
-                
+
                 points = 0;
                 points_lbl.Text = "0";
                 timer1.Enabled = true;
                 gameover_lbl.Visible = false;
                 hghpoints_lbl.Visible = false;
                 hghscore_lbl.Visible = false;
-                playGround.BackColor = Color.White;
+                PlayGround.BackColor = Color.White;
             }
             if (e.KeyCode == Keys.F2)
             {
-            Anasayfa anasayfa = new Anasayfa();
+                Anasayfa anasayfa = new Anasayfa();
                 anasayfa.ShowDialog();
                 this.Close();
-            
+
             }
-        }
-
-        private void playground_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
