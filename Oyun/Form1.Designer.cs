@@ -38,9 +38,11 @@
             this.ball = new System.Windows.Forms.PictureBox();
             this.racket = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TopRacket = new System.Windows.Forms.PictureBox();
             this.playGround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TopRacket)).BeginInit();
             this.SuspendLayout();
             // 
             // playGround
@@ -51,6 +53,7 @@
             this.playGround.Controls.Add(this.hghscore_lbl);
             this.playGround.Controls.Add(this.score_lbl);
             this.playGround.Controls.Add(this.ball);
+            this.playGround.Controls.Add(this.TopRacket);
             this.playGround.Controls.Add(this.racket);
             this.playGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playGround.Location = new System.Drawing.Point(0, 0);
@@ -73,7 +76,7 @@
             // 
             this.hghpoints_lbl.AutoSize = true;
             this.hghpoints_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.hghpoints_lbl.Location = new System.Drawing.Point(266, 98);
+            this.hghpoints_lbl.Location = new System.Drawing.Point(249, 211);
             this.hghpoints_lbl.Name = "hghpoints_lbl";
             this.hghpoints_lbl.Size = new System.Drawing.Size(46, 51);
             this.hghpoints_lbl.TabIndex = 3;
@@ -85,7 +88,7 @@
             // 
             this.points_lbl.AutoSize = true;
             this.points_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.points_lbl.Location = new System.Drawing.Point(170, 47);
+            this.points_lbl.Location = new System.Drawing.Point(153, 160);
             this.points_lbl.Name = "points_lbl";
             this.points_lbl.Size = new System.Drawing.Size(46, 51);
             this.points_lbl.TabIndex = 3;
@@ -97,7 +100,7 @@
             // 
             this.hghscore_lbl.AutoSize = true;
             this.hghscore_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.hghscore_lbl.Location = new System.Drawing.Point(29, 98);
+            this.hghscore_lbl.Location = new System.Drawing.Point(12, 211);
             this.hghscore_lbl.Name = "hghscore_lbl";
             this.hghscore_lbl.Size = new System.Drawing.Size(247, 51);
             this.hghscore_lbl.TabIndex = 2;
@@ -108,7 +111,7 @@
             // 
             this.score_lbl.AutoSize = true;
             this.score_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.score_lbl.Location = new System.Drawing.Point(29, 47);
+            this.score_lbl.Location = new System.Drawing.Point(12, 160);
             this.score_lbl.Name = "score_lbl";
             this.score_lbl.Size = new System.Drawing.Size(147, 51);
             this.score_lbl.TabIndex = 2;
@@ -138,6 +141,15 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // TopRacket
+            // 
+            this.TopRacket.BackColor = System.Drawing.Color.Black;
+            this.TopRacket.Location = new System.Drawing.Point(275, 12);
+            this.TopRacket.Name = "TopRacket";
+            this.TopRacket.Size = new System.Drawing.Size(300, 20);
+            this.TopRacket.TabIndex = 0;
+            this.TopRacket.TabStop = false;
+            // 
             // gameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +164,7 @@
             this.playGround.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TopRacket)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,6 +180,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label hghpoints_lbl;
         private System.Windows.Forms.Label hghscore_lbl;
+        private System.Windows.Forms.PictureBox TopRacket;
     }
 }
 

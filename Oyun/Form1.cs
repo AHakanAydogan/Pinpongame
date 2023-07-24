@@ -12,15 +12,18 @@ namespace Oyun
 {
     public partial class gameForm : Form
     {
-        public int speed_left = 5;
-        public int speed_top = 5;
+        public int speed_left=1;
+        public int speed_top=1;
         public int points = 0;
         public int highscore = 0;
+        public char difficulties;
+        public bool color;
 
 
 
         public gameForm()
         {
+            
             InitializeComponent();
             points = 0;
             timer1.Enabled = true;
@@ -31,12 +34,15 @@ namespace Oyun
 
             racket.Top = playGround.Bottom-(playGround.Bottom/15);
             racket.Left = playGround.Width/2-(racket.Width/2);
+            TopRacket.Left=playGround.Width/2-(TopRacket.Width/2);
+            TopRacket.Top = playGround.Top + (TopRacket.Height*2);
             gameover_lbl.Left=playGround.Width/2-(gameover_lbl.Width/2);
             gameover_lbl.Top=playGround.Height/2-(gameover_lbl.Height/2);
             gameover_lbl.Visible = false;
             hghpoints_lbl.Visible = false;
             hghscore_lbl.Visible=false;
 
+        
 
         }
 
@@ -62,6 +68,25 @@ namespace Oyun
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (difficulties == 'e')
+            {
+                speed_left = 5;
+                speed_top = 5;
+                difficulties = 'x';
+            }
+            else if (difficulties == 'm')
+            {
+                speed_left = 8;
+                speed_top = 8;
+                difficulties = 'y';
+            }
+            else if (difficulties == 'h')
+            {
+                speed_left = 12;
+                speed_top = 12;
+                difficulties = 'z';
+            }
+
             racket.Left=Cursor.Position.X-(racket.Width/2);
             ball.Left += speed_left;
             ball.Top += speed_top;
@@ -77,7 +102,15 @@ namespace Oyun
             }
             if (ball.Top<= playGround.Top)
             {
-                speed_top = -speed_top;
+                gameover_lbl.Visible = true;
+                if (points > highscore)
+                {
+                    hghpoints_lbl.Text = points.ToString();
+                    highscore = points;
+                }
+                hghpoints_lbl.Visible = true;
+                hghscore_lbl.Visible = true;
+                timer1.Enabled = false;
             }
             if (ball.Bottom>= playGround.Bottom)
             {
@@ -94,24 +127,79 @@ namespace Oyun
             }
             if (ball.Bottom >= racket.Top && ball.Bottom <= racket.Bottom && ball.Left>=racket.Left && ball.Right<=racket.Right) 
             {
-                speed_top += 2;
-                speed_left += 2;
+                switch(difficulties)
+                { 
+                    case 'x':
+                        speed_top += 1;
+                        speed_left += 1;
+                        break;
+                    case 'y':
+                        speed_left += 2;
+                        speed_top += 2;
+                        break;
+                    case 'z':
+                        speed_left += 3;
+                        speed_top += 3;
+                        break;
+
+                }
+
                 speed_top = -speed_top;
 
                 points += 1;
-                points_lbl.Text=points.ToString();
+                points_lbl.Text= points.ToString();
 
-                Random r = new Random();
-                playGround.BackColor = Color.FromArgb(r.Next(150,255), r.Next(150, 255), r.Next(150, 255));
+                if (color)
+                {
+                    Random r = new Random();
+                    playGround.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
+                }
 
 
+            }
+            if(ball.Top <= TopRacket.Bottom && ball.Top <= TopRacket.Bottom && ball.Left >= TopRacket.Left && ball.Right <= TopRacket.Right)
+            {
+                switch (difficulties)
+                {
+                    case 'x':
+                        speed_top -= 1;
+                        speed_left += 1;
+                        break;
+                    case 'y':
+                        speed_left += 2;
+                        speed_top -= 2;
+                        break;
+                    case 'z':
+                        speed_left += 3;
+                        speed_top -= 3;
+                        break;
+
+                }
                 
+                speed_top = -speed_top;
+
+                points += 1;
+                points_lbl.Text = points.ToString();
+
+                if (color)
+                {
+                    Random r = new Random();
+                    playGround.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
+                }
             }
         }
 
         private void gameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape) 
+            if (e.KeyCode == Keys.D)
+            {
+                TopRacket.Left += 100;
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                TopRacket.Left -= 100;
+            }
+            if (e.KeyCode == Keys.Escape) 
             {
             this.Close();
             }
@@ -119,9 +207,24 @@ namespace Oyun
             {
                 Random r = new Random();
                 ball.Top = r.Next(300,600);
-                ball.Left = r.Next(300, 600);
-                speed_left = 4;
-                speed_top = 4;
+                ball.Left = r.Next(900, 1000);
+                switch (difficulties)
+                {
+                    case 'x':
+                        speed_left = 5;
+                        speed_top = 5;
+                        break;
+                    case 'y':
+                        speed_left = 8;
+                        speed_top = 8;
+                        break;
+                    case 'z':
+                        speed_left = 12;
+                        speed_top = 12;
+                        break;
+
+                }
+                
                 points = 0;
                 points_lbl.Text = "0";
                 timer1.Enabled = true;

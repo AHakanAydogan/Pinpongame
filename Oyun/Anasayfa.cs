@@ -44,44 +44,56 @@ namespace Oyun
 
         private void button4_Click(object sender, EventArgs e)
         {
-            gameForm gameForm = new gameForm();
-            gameForm.ShowDialog();
+            gameForm EasyGameForm2 = new gameForm();
+            EasyGameForm2.difficulties='e';
+            EasyGameForm2.color = true;
+            EasyGameForm2.ShowDialog();
             this.Close();
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            gameFormMedColor gameFormMedColor = new gameFormMedColor();
-            gameFormMedColor.ShowDialog();
+            gameForm MediumGameForm= new gameForm();
+            MediumGameForm.difficulties = 'm';
+            MediumGameForm.color = true;
+            MediumGameForm.ShowDialog();
             this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            gameFormHardColor gameFormHardColor = new gameFormHardColor();
-            gameFormHardColor.ShowDialog();
+            gameForm HardGameForm=new gameForm();
+            HardGameForm.difficulties = 'h';
+            HardGameForm.color = true;
+            HardGameForm.ShowDialog();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gameFormEasyWo gameFormEasyWo = new gameFormEasyWo();
-            gameFormEasyWo.ShowDialog();
+            gameForm EasyGameNoColorForm=new gameForm();
+            EasyGameNoColorForm.difficulties = 'e';
+            EasyGameNoColorForm.color = false;
+            EasyGameNoColorForm.ShowDialog();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            gameFormMedWo gameFormMedWo = new gameFormMedWo();
-            gameFormMedWo.ShowDialog();
+            gameForm MedGameNoColorForm= new gameForm();
+            MedGameNoColorForm.difficulties = 'm';
+            MedGameNoColorForm.color = false;
+            MedGameNoColorForm.ShowDialog();
             this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            gameFormHardWo gameFormHardWo = new gameFormHardWo();
-            gameFormHardWo.ShowDialog(); 
+            gameForm HardGameNoColorForm = new gameForm();
+            HardGameNoColorForm.difficulties = 'h';
+            HardGameNoColorForm.color = false;
+            HardGameNoColorForm.ShowDialog();
             this.Close();
         }
     }

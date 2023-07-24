@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SolrNet, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SolrNet.Core.1.1.1\lib\net46\SolrNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,36 +67,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="gameFormEasyWo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gameFormEasyWo.Designer.cs">
-      <DependentUpon>gameFormEasyWo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gameFormHardColor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gameFormHardColor.Designer.cs">
-      <DependentUpon>gameFormHardColor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gameFormHardWo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gameFormHardWo.Designer.cs">
-      <DependentUpon>gameFormHardWo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gameFormMedColor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gameFormMedColor.Designer.cs">
-      <DependentUpon>gameFormMedColor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gameFormMedWo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gameFormMedWo.Designer.cs">
-      <DependentUpon>gameFormMedWo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Anasayfa.resx">
@@ -95,21 +74,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gameFormEasyWo.resx">
-      <DependentUpon>gameFormEasyWo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gameFormHardColor.resx">
-      <DependentUpon>gameFormHardColor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gameFormHardWo.resx">
-      <DependentUpon>gameFormHardWo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gameFormMedColor.resx">
-      <DependentUpon>gameFormMedColor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gameFormMedWo.resx">
-      <DependentUpon>gameFormMedWo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +84,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

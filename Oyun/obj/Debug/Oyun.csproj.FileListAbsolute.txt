@@ -10,8 +10,11 @@ D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.csproj.CoreCompileInputs.cach
 D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.exe
 D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.pdb
 D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.Anasayfa.resources
-D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.gameFormMedColor.resources
-D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.gameFormHardColor.resources
-D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.gameFormEasyWo.resources
-D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.gameFormMedWo.resources
-D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.gameFormHardWo.resources
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\Newtonsoft.Json.dll
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\SolrNet.dll
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\System.ValueTuple.dll
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\Newtonsoft.Json.xml
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\SolrNet.pdb
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\SolrNet.xml
+D:\Visual Studio Kodları\Oyun\Oyun\bin\Debug\System.ValueTuple.xml
+D:\Visual Studio Kodları\Oyun\Oyun\obj\Debug\Oyun.csproj.CopyComplete
