@@ -15,6 +15,7 @@ namespace Oyun
         public Anasayfa()
         {
             InitializeComponent();
+            KeyPreview = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
             this.Bounds=Screen.PrimaryScreen.Bounds;
@@ -35,6 +36,7 @@ namespace Oyun
             wocolorchange_lbl.Top = (playground.Height / wocolorchange_lbl.Height) * 5;
             colorchange_lbl.Left = (playground.Width / colorchange_lbl.Width) * 59;
             colorchange_lbl.Top = (playground.Height / colorchange_lbl.Height) * 5;
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -95,6 +97,14 @@ namespace Oyun
             HardGameNoColorForm.color = false;
             HardGameNoColorForm.ShowDialog();
             this.Close();
+        }
+
+        private void Anasayfa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape) 
+            {
+                this.Close();
+            }
         }
     }
 }

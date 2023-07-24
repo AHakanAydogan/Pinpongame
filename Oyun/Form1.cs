@@ -125,7 +125,7 @@ namespace Oyun
                 timer1.Enabled = false;
 
             }
-            if (ball.Bottom >= racket.Top && ball.Bottom <= racket.Bottom && ball.Left>=racket.Left && ball.Right<=racket.Right) 
+            if ((ball.Bottom+ ball.Height / 2)  >= racket.Top && (ball.Bottom+ball.Height / 2)  <= racket.Bottom && ball.Left>=racket.Left && ball.Right <= racket.Right) 
             {
                 switch(difficulties)
                 { 
@@ -157,7 +157,7 @@ namespace Oyun
 
 
             }
-            if(ball.Top <= TopRacket.Bottom && ball.Top <= TopRacket.Bottom && ball.Left >= TopRacket.Left && ball.Right <= TopRacket.Right)
+            if((ball.Top-ball.Height/2) <= TopRacket.Bottom && (ball.Top - ball.Height / 2) <= TopRacket.Bottom && ball.Left >= TopRacket.Left && ball.Right <= TopRacket.Right)
             {
                 switch (difficulties)
                 {
